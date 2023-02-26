@@ -1,14 +1,15 @@
 package ru.netology;
 
 public class Radio {
-    public int currentWave;
+    private int currentWave;
+    private int currentVolume;
 
     public void setCurrentWave(int newCurrentWave) {
         if (newCurrentWave >= 0 && newCurrentWave <= 9) {
             currentWave = newCurrentWave;
         } else if (newCurrentWave < 0) {
-            currentWave = 9;
-        } else currentWave = 0;
+            currentWave = 0;
+        } else currentWave = 9;
     }
 
     public int getCurrentWave() {
@@ -27,25 +28,28 @@ public class Radio {
         } else currentWave = 9;
     }
 
-    public int currentVolume;
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume >= 0 && newCurrentVolume <= 10) {
+            currentVolume = newCurrentVolume;
+        } else if (newCurrentVolume < 0) {
+            currentVolume = 0;
+        } else currentVolume = 10;
+    }
 
     public int getCurrentVolume() {
         return currentVolume;
     }
 
     public void increaseVolume() {
-        if (currentVolume < 10 && currentVolume >= 0) {
+        if (currentVolume < 10) {
             currentVolume = currentVolume + 1;
-        } else if (currentVolume < 0) {
-            currentVolume = 0;
-        } else currentVolume = 10;
+        }
     }
 
     public void decreaseVolume() {
-        if (currentVolume <= 10 && currentVolume > 0) {
+        if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
-        } else if (currentVolume <= 0) {
-            currentVolume = 0;
-        } else currentVolume = 10;
+        }
     }
+
 }

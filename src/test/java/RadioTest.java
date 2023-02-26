@@ -11,7 +11,7 @@ public class RadioTest {
 
         Radio wave = new Radio();
 
-        wave.currentWave = current;
+        wave.setCurrentWave(current);
         wave.next();
         int actual = wave.getCurrentWave();
 
@@ -26,7 +26,7 @@ public class RadioTest {
 
         Radio wave = new Radio();
 
-        wave.currentWave = current;
+        wave.setCurrentWave(current);
         wave.prev();
         int actual = wave.getCurrentWave();
 
@@ -55,7 +55,7 @@ public class RadioTest {
 
         Radio volume = new Radio();
 
-        volume.currentVolume = current;
+        volume.setCurrentVolume(current);
         volume.increaseVolume();
         int actual = volume.getCurrentVolume();
 
@@ -69,7 +69,7 @@ public class RadioTest {
 
         Radio volume = new Radio();
 
-        volume.currentVolume = current;
+        volume.setCurrentVolume(current);
         volume.decreaseVolume();
         int actual = volume.getCurrentVolume();
 
