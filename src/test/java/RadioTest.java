@@ -18,7 +18,6 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
-
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/shouldDecreaseWave.csv")
 

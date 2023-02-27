@@ -11,7 +11,6 @@ public class Radio {
             currentWave = 0;
         } else currentWave = 9;
     }
-
     public int getCurrentWave() {
         return currentWave;
     }
@@ -51,5 +50,4 @@ public class Radio {
             currentVolume = currentVolume - 1;
         }
     }
-
 }
