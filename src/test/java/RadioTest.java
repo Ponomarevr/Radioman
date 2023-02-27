@@ -9,6 +9,20 @@ public class RadioTest {
 
     public void shouldIncreaseWave(int expected, int current) {
 
+        Radio wave = new Radio(100);
+
+        wave.setCurrentWave(current);
+        wave.next();
+        int actual = wave.getCurrentWave();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(files = "src/test/resources/shouldIncreaseWaveIfDefault.csv")
+    public void shouldIncreaseWaveIfDefault(int expected, int current) {
+
         Radio wave = new Radio();
 
         wave.setCurrentWave(current);
@@ -24,6 +38,21 @@ public class RadioTest {
 
     public void shouldDecreaseWave(int expected, int current) {
 
+        Radio wave = new Radio(50);
+
+        wave.setCurrentWave(current);
+        wave.prev();
+        int actual = wave.getCurrentWave();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(files = "src/test/resources/shouldDecreaseWaveIfDefault.csv")
+
+    public void shouldDecreaseWaveIfDefault(int expected, int current) {
+
         Radio wave = new Radio();
 
         wave.setCurrentWave(current);
@@ -38,6 +67,20 @@ public class RadioTest {
     @CsvFileSource(files = "src/test/resources/shouldSetCurrentWave.csv")
 
     public void shouldSetCurrentWave(int expected, int current) {
+
+        Radio wave = new Radio(100);
+
+        wave.setCurrentWave(current);
+        int actual = wave.getCurrentWave();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(files = "src/test/resources/shouldSetCurrentWaveIfDefault.csv")
+
+    public void shouldSetCurrentWaveIfDefault(int expected, int current) {
 
         Radio wave = new Radio();
 
